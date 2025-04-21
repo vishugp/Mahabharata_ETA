@@ -2,6 +2,21 @@ import pandas as pd
 import numpy as np 
 import configparser
 import os
+import re
+import nltk
+
+for package in [
+                'tokenizers/punkt', 
+                'taggers/averaged_perceptron_tagger', 
+                'corpora/stopwords', 
+                'help/tagsets'
+                ]:
+            
+            try:
+                   nltk.data.find(package)
+            except IndexError:
+                   nltk.download(package)
+
 OHCO = ['book_id','chap_num', 'para_num', 'sent_num', 'token_num']
 
 def create_tokendf(filepath):
@@ -12,6 +27,10 @@ def create_tokendf(filepath):
                               encoding='utf-8-sig').readlines(), columns=['line_str'])
     LINES.index.name = 'line_num'
     LINES.line_str = LINES.line_str.str.replace(r'\n+', ' ', regex=True).str.strip()
+
+    book_id_pat = LINES.line_str.str.match(r"BOOK [\d]")
+    title = LINES.iloc[LINES.loc[book_id_pat].index[0]+2,0]
+    title = re.sub("[-]"," ",title.title())
 
 
 
@@ -103,15 +122,20 @@ def create_tokendf(filepath):
 
     #### TOKEN LEVEL
     # RegEx to Split by space, hyphen or comma
-    token_pat = r"[\s',-]+"
-    TOKENS = SENTS['sent_str'].str.split(token_pat, expand=True)\
-        .stack()\
-        .to_frame('token_str')
+    # token_pat = r"[\s',-]+"
+    # TOKENS = SENTS['sent_str'].str.split(token_pat, expand=True)\
+    #     .stack()\
+    #     .to_frame('token_str')
 
-    TOKENS.index.names = OHCO[1:5]
+    # TOKENS.index.names = OHCO[1:5]
 
-    TOKENS['term_str'] = TOKENS.token_str.replace(r'[\W_]+', '', regex=True).str.lower()
+    # TOKENS['term_str'] = TOKENS.token_str.replace(r'[\W_]+', '', regex=True).str.lower()
 
-    TOKENS.head(25)
+    TOKENS = SENTS.sent_str.apply(lambda x: pd.Series(nltk.pos_tag(nltk.word_tokenize(x))))
 
-    return dict(zip(OHCO[1:], [CHAPS, PARAS, SENTS, TOKENS]))
+    TOKENS = TOKENS.stack().to_frame('pos_tuple')
+    TOKENS['pos'] = TOKENS.pos_tuple.apply(lambda x: x[1])
+    TOKENS['token_str'] = TOKENS.pos_tuple.apply(lambda x: x[0])
+    TOKENS['term_str'] = TOKENS.token_str.str.lower()   
+
+    return dict(zip(OHCO, [title ,CHAPS, PARAS, SENTS, TOKENS]))
