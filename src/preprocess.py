@@ -131,11 +131,12 @@ def create_tokendf(filepath):
 
     # TOKENS['term_str'] = TOKENS.token_str.replace(r'[\W_]+', '', regex=True).str.lower()
 
-    TOKENS = SENTS.sent_str.apply(lambda x: pd.Series(nltk.pos_tag(nltk.word_tokenize(x))))
+    TOKENS = SENTS.sent_str.apply(lambda x: pd.Series(nltk.pos_tag(nltk.word_tokenize(x.replace("'","")))))
 
     TOKENS = TOKENS.stack().to_frame('pos_tuple')
     TOKENS['pos'] = TOKENS.pos_tuple.apply(lambda x: x[1])
     TOKENS['token_str'] = TOKENS.pos_tuple.apply(lambda x: x[0])
-    TOKENS['term_str'] = TOKENS.token_str.str.lower()   
+    TOKENS['term_str'] = TOKENS.token_str.str.lower().apply(lambda x: re.sub("[^a-zA-Z0-9]","",x))   
+    TOKENS.index.names = OHCO[1:]
 
     return dict(zip(OHCO, [title ,CHAPS, PARAS, SENTS, TOKENS]))
