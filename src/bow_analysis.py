@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-OHCO = ['book_id','chap_num', 'para_num', 'sent_num', 'token_num']
+OHCO = ['book_id','chap_id','sec_id','para_num', 'sent_num', 'token_num']
 
 def bow_rep(tokens, choice):
     """
@@ -15,8 +15,9 @@ def bow_rep(tokens, choice):
         pd.DataFrame: Bag-Of-Words Representation at the chosen OHCO Level
     """
     bags = dict(
-                SENTS = OHCO[:4],
-                PARAS = OHCO[:3],
+                SENTS = OHCO[:5],
+                PARAS = OHCO[:4],
+                SECS = OHCO[:3],
                 CHAPS = OHCO[:2],
                 BOOKS = OHCO[:1]
             )

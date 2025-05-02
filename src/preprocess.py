@@ -17,7 +17,7 @@ for package in [
             except IndexError:
                    nltk.download(package)
 
-OHCO = ['book_id','chap_num', 'para_num', 'sent_num', 'token_num']
+OHCO = ['book_id','chap_num','section_num', 'para_num', 'sent_num', 'token_num']
 
 def create_tokendf(filepath):
     ### READING
