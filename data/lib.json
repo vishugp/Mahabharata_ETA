@@ -1,0 +1,147 @@
+[
+    {
+      "book_id": 1,
+      "parva_name": "Adi",
+      "timeline": "Pre-War",
+      "key_focus": "Origins, family lineages, childhood of heroes",
+      "main_theme": "lineage",
+      "broad_theme": "Mythology"
+    },
+    {
+      "book_id": 2,
+      "parva_name": "Sabha",
+      "timeline": "Pre-War",
+      "key_focus": "Dice game, humiliation of Draupadi, exile begins",
+      "main_theme": "power",
+      "broad_theme": "Strategy"
+    },
+    {
+      "book_id": 3,
+      "parva_name": "Vana",
+      "timeline": "Pre-War",
+      "key_focus": "Forest exile, philosophical tales, sub-stories",
+      "main_theme": "philosophy",
+      "broad_theme": "Philosophy"
+    },
+    {
+      "book_id": 4,
+      "parva_name": "Virata",
+      "timeline": "Pre-War",
+      "key_focus": "Incognito year in King Virata's court",
+      "main_theme": "strategy",
+      "broad_theme": "Strategy"
+    },
+    {
+      "book_id": 5,
+      "parva_name": "Udyoga",
+      "timeline": "Pre-War",
+      "key_focus": "Failed diplomacy, war preparations",
+      "main_theme": "diplomacy",
+      "broad_theme": "Philosophy"
+    },
+    {
+      "book_id": 6,
+      "parva_name": "Bhishma",
+      "timeline": "War",
+      "key_focus": "Start of war, Krishna's counsel, Bhagavad Gita",
+      "main_theme": "dharma",
+      "broad_theme": "Philosophy"
+    },
+    {
+      "book_id": 7,
+      "parva_name": "Drona",
+      "timeline": "War",
+      "key_focus": "Drona leads Kauravas, death of Abhimanyu",
+      "main_theme": "sacrifice",
+      "broad_theme": "Strategy"
+    },
+    {
+      "book_id": 8,
+      "parva_name": "Karna",
+      "timeline": "War",
+      "key_focus": "Karna becomes commander, dramatic duels",
+      "main_theme": "loyalty",
+      "broad_theme": "Strategy"
+    },
+    {
+      "book_id": 9,
+      "parva_name": "Shalya",
+      "timeline": "War",
+      "key_focus": "Final battles, Shalya leads, Duryodhana defeated",
+      "main_theme": "conflict",
+      "broad_theme": "War"
+    },
+    {
+      "book_id": 10,
+      "parva_name": "Sauptika",
+      "timeline": "War",
+      "key_focus": "Night massacre by Ashwatthama",
+      "main_theme": "revenge",
+      "broad_theme": "War"
+    },
+    {
+      "book_id": 11,
+      "parva_name": "Stri",
+      "timeline": "Post-War",
+      "key_focus": "Lament of women, mourning after the war",
+      "main_theme": "grief",
+      "broad_theme": "Sentiment"
+    },
+    {
+      "book_id": 12,
+      "parva_name": "Shanti",
+      "timeline": "Post-War",
+      "key_focus": "Bhishma’s teachings on dharma and kingship",
+      "main_theme": "wisdom",
+      "broad_theme": "Philosophy"
+    },
+    {
+      "book_id": 13,
+      "parva_name": "Anushasana",
+      "timeline": "Post-War",
+      "key_focus": "Bhishma continues moral, ethical discourses",
+      "main_theme": "ethics",
+      "broad_theme": "Philosophy"
+    },
+    {
+      "book_id": 14,
+      "parva_name": "Ashvamedhika",
+      "timeline": "Post-War",
+      "key_focus": "Yudhishthira’s horse sacrifice and conquests",
+      "main_theme": "ritual",
+      "broad_theme": "Ritual"
+    },
+    {
+      "book_id": 15,
+      "parva_name": "Ashramavasika",
+      "timeline": "Post-War",
+      "key_focus": "Retirement and death of elders",
+      "main_theme": "renunciation",
+      "broad_theme": "Spirituality"
+    },
+    {
+      "book_id": 16,
+      "parva_name": "Mausala",
+      "timeline": "Post-War",
+      "key_focus": "Destruction of Yadava clan, Krishna's death",
+      "main_theme": "destruction",
+      "broad_theme": "Sentiment"
+    },
+    {
+      "book_id": 17,
+      "parva_name": "Mahaprasthanika",
+      "timeline": "Post-War",
+      "key_focus": "Pandavas renounce kingdom, begin final journey",
+      "main_theme": "detachment",
+      "broad_theme": "Spirituality"
+    },
+    {
+      "book_id": 18,
+      "parva_name": "Svargarohana",
+      "timeline": "Post-War",
+      "key_focus": "Yudhishthira’s ascent to heaven and cosmic resolution",
+      "main_theme": "liberation",
+      "broad_theme": "Spirituality"
+    }
+  ]
+  
