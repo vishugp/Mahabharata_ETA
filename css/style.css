@@ -1,0 +1,259 @@
+body {
+  background: #f9f6ef url('https://www.transparenttextures.com/patterns/old-mathematics.png');
+  color: #3e2c1c;
+  font-family: 'EB Garamond', 'Crimson Pro', 'Noto Serif', serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Faint Sanskrit watermark */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Manuscript_Devanagari.png') center center no-repeat;
+  background-size: 60vw auto;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #e2c590 80%, #f7e7b3 100%);
+  padding: 0.5em 2em 0.5em 2em;
+  text-align: left;
+  border-bottom: 3px double #bfa14a;
+  box-shadow: 0 2px 8px #bfa14a22;
+  position: relative;
+  z-index: 1;
+}
+header h1 {
+  font-size: 2em;
+  color: #3e2c1c;
+  border-bottom: none;
+  display: block;
+  padding-bottom: 0;
+  margin: 0;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+nav a {
+  color: #3e2c1c;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.03em;
+  padding: 0.2em 0.5em;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+nav a:hover, nav a:focus {
+  background: #bfa14a33;
+  color: #7c5c2b;
+}
+
+h1, h2, h3 {
+  font-family: 'EB Garamond', serif;
+  color: #3e2c1c;
+  text-shadow: 0 1px 0 #fffbe8, 0 2px 4px #bfa14a22;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+h1 {
+  font-size: 2.5em;
+  color: #3e2c1c;
+  border-bottom: 2px solid #bfa14a;
+  display: inline-block;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.04em;
+}
+h2 {
+  font-size: 1.7em;
+  color: #2d3a5a;
+  border-left: 6px solid #bfa14a;
+  padding-left: 0.5em;
+  background: linear-gradient(90deg, #fffbe8 80%, #f7e7b3 100%);
+  border-radius: 0 12px 12px 0;
+  margin-top: 1.5em;
+}
+h3 {
+  font-size: 1.2em;
+  color: #7c5c2b;
+  margin-top: 1.2em;
+}
+
+main {
+  max-width: 1100px;
+  margin: 2em auto;
+  background: rgba(255,255,255,0.0);
+  padding: 0;
+  border-radius: 18px;
+  box-shadow: none;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+hr {
+  border: 0;
+  border-top: 2px dashed #bfa14a;
+  margin: 2em 0;
+}
+
+/* Drop cap for manuscript feel */
+.dropcap {
+  float: left;
+  font-size: 3.2em;
+  line-height: 1;
+  margin-right: 0.18em;
+  color: #bfa14a;
+  font-family: 'EB Garamond', serif;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #fffbe8;
+}
+
+/* Manuscript-style plot frames */
+iframe,img , img.plot-frame {
+  border: 3px double #bfa14a;
+  border-radius: 12px;
+  margin: 1.5em 0;
+  background: #fffbe8;
+  box-shadow: 0 2px 12px #bfa14a22;
+}
+
+/* Ornamental divider (use as <div class="ornament"></div>) */
+.ornament {
+  width: 100%;
+  height: 32px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Indian_motif_gold.png') center center no-repeat;
+  background-size: 180px 32px;
+  margin: 2em 0;
+  opacity: 0.25;
+}
+
+/* Analysis page specific styles */
+.analysis-main .tab-container {
+  border-bottom: none;
+  /* margin-top: 1.5em; */
+  margin-bottom: -2.2em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 0.5em;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+  z-index: 2;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1100px;
+}
+.analysis-main .tab-link {
+  background: #e2c590;
+  border: 2px solid #bfa14a;
+  /* border-top: none; */
+  border-radius: 10px 10px 0 0;
+  /* padding: 0.6em 1.4em 0.4em 1.4em; */
+  cursor: pointer;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.08em;
+  color: #7c5c2b;
+  outline: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  position: relative;
+  top: -6.5px;
+
+  right: 0px;
+  box-shadow: 0 2px 8px #bfa14a22;
+  z-index: 3;
+}
+.analysis-main .tab-link.active, .analysis-main .tab-link:hover {
+  background: #fffbe8;
+  color: #3e2c1c;
+  /* font-weight: bold; */
+  z-index: 4;
+  border-bottom: 2px solid #fffbe8;
+  box-shadow: 0 -2px 12px #bfa14a44, 0 2px 6px #fffbe8;
+}
+.analysis-main .analysis-frame {
+  background: #fffbe8;
+  border: 2px solid #bfa14a;
+  border-radius: 0 14px 0 0 ;
+  box-shadow: 0 0 18px #bfa14a33, 0 0 0 8px #e2c59033;
+  padding: 0 2em 2em 2em;
+  margin-top: 27px;
+  position: relative;
+  z-index: 1;
+}
+.analysis-main {
+  max-width: 1100px;
+  margin: 2em auto;
+  background: rgba(255,255,255,0.0);
+  padding: 0;
+  border-radius: 18px;
+  box-shadow: none;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  border-top: 3px double #bfa14a;
+  font-size: 0.95em;
+  color: #7c5c2b;
+  background: linear-gradient(90deg, #e2c590 80%, #f7e7b3 100%);
+  margin-top: 2em;
+  box-shadow: 0 -2px 8px #bfa14a22;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.7em 1em 0.7em 1em;
+  }
+  header h1 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    text-align: left;
+  }
+  nav {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5em;
+  }
+  nav a {
+    font-size: 1em;
+    padding: 0.2em 0.4em;
+  }
+  main {
+    max-width: 98vw;
+    padding: 1em 0.5em;
+  }
+  .tab-container {
+    flex-wrap: wrap;
+    gap: 0.2em;
+    font-size: 0.95em;
+  }
+  .tab-link {
+    padding: 0.5em 0.7em;
+    font-size: 1em;
+  }
+  iframe, img.plot-frame {
+    min-width: 220px;
+    width: 100%;
+    height: 320px;
+  }
+}

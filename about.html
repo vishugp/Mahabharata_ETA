@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Mahabharata: A Data Dive Through History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>About This Project</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Project Overview</h2>
+    <p>
+      This project applies advanced text analysis to the Mahabharata, following the Standard Text Analytic Data Model:
+      <ul>
+        <li><b>F0:</b> Raw text (from sacred-texts.com, Ganguli translation)</li>
+        <li><b>F2:</b> Parsing into structured tables (books, chapters, tokens)</li>
+        <li><b>F3:</b> Annotation with linguistic features (POS, term frequency)</li>
+        <li><b>F4:</b> Vectorization (TF-IDF, Bag-of-Words)</li>
+        <li><b>F5:</b> Modeling (PCA, LDA, Word2Vec)</li>
+      </ul>
+    </p>
+    <h2>Data Source</h2>
+    <ul>
+      <li>Source: <a href="https://sacred-texts.com/hin/maha/index.htm">sacred-texts.com</a></li>
+      <li>English translation by Kisari Mohan Ganguli (late 19th century)</li>
+      <li>18 books, 14.5 MB, plaintext</li>
+      <li>2.5 million tokens, 30,682 unique terms</li>
+      <li>Hierarchical structure: book → chapter → section → paragraph → sentence → token</li>
+    </ul>
+    <h2>Technical Stack</h2>
+    <ul>
+      <li>Python, NLTK, scikit-learn, gensim, Jupyter, Plotly, t-SNE, LDA, PCA</li>
+    </ul>
+    <h2>Acknowledgments</h2>
+    <ul>
+      <li>Text as Data (DS 5001), University of Virginia</li>
+      <li>Sacred-texts.com for the digital corpus</li>
+    </ul>
+    <h2>Future Directions</h2>
+    <ul>
+      <li>Named Entity Recognition to map character relationships more systematically</li>
+      <li>Network analysis of character co-occurrences</li>
+      <li>Deeper temporal analysis of narrative progression</li>
+      <li>Comparative analysis with other translations or epics</li>
+    </ul>
+    <h2>License</h2>
+    <p>MIT License (see LICENSE file for details)</p>
+    <h2>Contact</h2>
+    <p>
+      <b>Your Name</b><br>
+      Data Scientist &amp; Mahabharata Enthusiast<br>
+      <a href="mailto:your.email@example.com">your.email@example.com</a>
+    </p>
+  </main>
+  <footer>
+    &copy; 2024 Mahabharata NLP Project
+  </footer>
+</body>
+</html> 

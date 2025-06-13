@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analysis | Mahabharata: A Data Dive Through History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Analysis</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+  <main class="analysis-main">
+    <div class="tab-container">
+      <button class="tab-link active" onclick="openTab(event, 'sentiment')">Sentiment Timeline</button>
+      <button class="tab-link" onclick="openTab(event, 'heatmap')">Emotion Heatmap</button>
+      <button class="tab-link" onclick="openTab(event, 'pca')">PCA Analysis</button>
+      <button class="tab-link" onclick="openTab(event, 'lda')">LDA Topic Modeling</button>
+      <button class="tab-link" onclick="openTab(event, 'word2vec')">Word2Vec & t-SNE</button>
+      <button class="tab-link" onclick="openTab(event, 'network')">Character Network</button>
+    </div>
+    <div class="analysis-frame">
+      <div id="sentiment" class="tab-content" style="display:block;">
+        <h2>Sentiment Timeline</h2>
+        <p>This interactive timeline tracks the emotional journey of the Mahabharata, chapter by chapter.<br>
+        - Before the war, Krishna maintains positive sentiment while others fluctuate.<br>
+        - During battle, emotions become unstable for all characters, with significant overlap.<br>
+        - Karna's sentiment drops dramatically around his death scene.<br>
+        - Post-war, all characters settle near neutral emotional territory.<br>
+        The convergence of sentiment during war illustrates how conflict blurs the moral lines between heroes and villains.</p>
+        <!-- <iframe src="images/War_Sentiment.png" width="100%" height="100"></iframe> -->
+        <img src="images/War_Sentiment.png" style="width:100%; height:auto;" />
+        <iframe src="plots/character_sentiments.html" style="width:100%; height:620px;"></iframe>
+
+      </div>
+      <div id="heatmap" class="tab-content">
+        <h2>Emotion Heatmap</h2>
+        <p>This heatmap reveals the emotional profiles of major characters:<br>
+        - <b>Bhima, Karna, and Duryodhana</b> show the highest anger scores.<br>
+        - <b>Krishna and Yudhishthira</b> display the highest trust scores.<br>
+        - <b>Joy</b> appears most prominently in Yudhishthira, Krishna, and Karna.<br>
+        - <b>Negative sentiment</b> is strongest in Bhima, Karna, and Duryodhana.<br>
+        These patterns support traditional interpretations while providing numerical evidence of psychological depth.</p>
+        <iframe src="plots/character_emotions.html" style="width:700px; height:480px;"></iframe>
+      </div>
+      
+      <div id="pca" class="tab-content">
+        <h2>PCA Analysis: War vs Peace Themes</h2>
+        <p>Principal Component Analysis (PCA) separates war and non-war sections:<br>
+        - <b>Positive PC1:</b> War-related terms ("shafts," "carwarriors," "pierced," "army")<br>
+        - <b>Negative PC1:</b> Spiritual terms ("deities," "penances," "brahman," "righteousness")<br>
+        - The timeline progression (Pre-War, War, Post-War) is mapped across the narrative space.</p>
+        <iframe src="plots/PC12.html" width="100%" height="900"></iframe>
+        <iframe src="plots/PC12_load.html" width="100%" height="850"></iframe>
+        <h3>Interpretation</h3>
+        <p>The first component distinguishes between the war and non-war parts of the saga. War-related terms dominate the positive PC1, while spirituality and peace are found in the negative PC1. The second component further separates antagonistic and supportive characters.</p>
+      </div>
+      <div id="lda" class="tab-content">
+        <h2>LDA Topic Modeling</h2>
+        <p>Ten distinct topics were identified, including:<br>
+        - Battle and warfare<br>
+        - Spiritual and philosophical discourse<br>
+        - Kingdom management and politics<br>
+        - Family relationships<br>
+        - Divine weapons and celestial beings<br>
+        Topics cluster intelligently, with war-related topics in the positive PC1 direction and domestic/kingdom topics in the negative PC1.</p>
+        <iframe src="plots/lda_topics.html" style="width:100%; height:820px;"></iframe>
+        <h3>Interpretation</h3>
+        <p>The PCA on the Theta Table gives results similar to the previous PCA analysis. Topics related to battle and war appear in the positive first Principal Component, while domestic and kingdom topics are in the negative PC1. The timeline of the narration aligns with these components.</p>
+      </div>
+      <div id="word2vec" class="tab-content">
+        <h2>Word Embeddings with Word2Vec and t-SNE</h2>
+        <p>Word2Vec embeddings visualized with t-SNE reveal:<br>
+        - Emotional terms cluster together<br>
+        - Warrior-related terminology forms distinct groups<br>
+        - Relational terms (family) appear in proximity<br>
+        These clusters demonstrate how the embedding model captures the semantic relationships within the epic's vocabulary.</p>
+        <iframe src="plots/word2vec_tsne.html" width="100%" height="1025"></iframe>
+        
+      </div>
+      <div id="network" class="tab-content">
+        <h2>Character Network (Coming Soon...)</h2>
+        <p>This feature is under development and will visualize the intricate web of relationships among the epic's heroes, villains, and sages. Stay tuned for updates!</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    &copy; 2024 Mahabharata NLP Project
+  </footer>
+  <script>
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  </script>
+</body>
+</html> 
