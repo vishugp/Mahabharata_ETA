@@ -83,7 +83,7 @@ h2 {
   color: #2d3a5a;
   border-left: 6px solid #bfa14a;
   padding-left: 0.5em;
-  background: linear-gradient(90deg, #fffbe8 80%, #f7e7b3 100%);
+  background: linear-gradient(90deg, #f7e7b3 0%, #fffbe8 50%);
   border-radius: 0 12px 12px 0;
   margin-top: 1.5em;
 }
@@ -160,6 +160,19 @@ iframe,img , img.plot-frame {
   width: 100%;
   max-width: 1100px;
 }
+
+.base-main {
+  background: #fffbe8;
+  border: 2px solid #bfa14a;
+  border-radius: 14px ;
+  box-shadow: 0 0 18px #bfa14a33, 0 0 0 8px #e2c59033;
+  padding: 0 2em 2em 2em;
+  margin-top: 27px;
+  position: relative;
+  z-index: 1;
+}
+
+
 .analysis-main .tab-link {
   background: #e2c590;
   border: 2px solid #bfa14a;
